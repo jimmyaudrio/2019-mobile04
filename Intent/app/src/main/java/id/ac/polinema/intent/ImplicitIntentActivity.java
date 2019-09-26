@@ -24,6 +24,7 @@ public class ImplicitIntentActivity extends AppCompatActivity {
 
     private ImageView avatarImage;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
