@@ -28,3 +28,4 @@ public class ExplicitIntentActivity extends AppCompatActivity {
         output.setText("Hello "+nama+" Congratulation");
     }
 }
+
