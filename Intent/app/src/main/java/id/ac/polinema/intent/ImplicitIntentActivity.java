@@ -20,10 +20,7 @@ public class ImplicitIntentActivity extends AppCompatActivity {
     private static final String TAG = ImplicitIntentActivity.class.getCanonicalName();
     private static final int GALLERY_REQUEST_CODE = 1;
 
-
-
     private ImageView avatarImage;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,25 +43,15 @@ public class ImplicitIntentActivity extends AppCompatActivity {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
                     avatarImage.setImageBitmap(bitmap);
                 } catch (IOException e) {
-                    Toast.makeText(this, "Can't load image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Can't Load Image", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, e.getMessage());
                 }
             }
         }
-
     }
 
     public void handleChangeAvatar(View view) {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, GALLERY_REQUEST_CODE);
     }
-
-    public void handleImplicitIntent(View view) {
-        Intent intent = new Intent(this, ImplicitIntentActivity.class);
-        startActivity(intent);
-    }
-
-
-
-
 }
